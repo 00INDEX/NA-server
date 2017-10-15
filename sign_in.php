@@ -11,8 +11,8 @@
  *-----------------------------------------------------------------------------------------------------------------------------
  *@title 用户登陆接口
  *@action
- *params user james STRING
- *params password james STRING
+ *@params user james STRING
+ *@params password james STRING
  *@method post
  */
 class sign_in externs Demos_App_Server{
