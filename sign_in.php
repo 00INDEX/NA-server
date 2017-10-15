@@ -32,4 +32,13 @@ class sign_in externs Demos_App_Server{
       $customer = array('sid' => seeion_id());
       $this->render('14001','Login Failed',array('Customer' => $customer));
       }
+      public function doAuth($user,$password){
+      $sql = $this->select()
+           ->from($this->t1,'*')
+           ->where("{$this->t1}.user = ?",$user)
+           ->where("{$this->t1}.password = ?",$password);
+      $user = $this->dbr()->fetchRow($sql);
+      if ($user) return $user;
+      return false;
+      }
 }
